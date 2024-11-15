@@ -422,10 +422,10 @@ function connectWebSocket() {
   const webSock = new WebSocket(WS_HOST);
 
   webSock.onopen = function () {
-    // Log connection success and display "T-Pot Honeypot Stats" title in green, so we know connection is established
+    // Log connection success and display "Styre Honeypot Stats" title in green, so we know connection is established
     var honeypotStatsHeader = document.getElementById("honeypotStatsHeader");
     honeypotStatsHeader.style.color = "green";
-    honeypotStatsHeader.textContent = "T-Pot Honeypot Stats"
+    honeypotStatsHeader.textContent = "Styre Honeypot Stats"
     console.log('[*] WebSocket connection established.');
   };
 
@@ -445,11 +445,11 @@ function connectWebSocket() {
      else if(event.code == 1011) reason = "[ ] Endpoint terminating connection: Server encountered an unexpected condition";
      else if(event.code == 1015) reason = "[ ] Endpoint terminating connection: Connection closed due TLS handshake failure";
      else reason = "[ ] Endpoint terminating connection; Unknown reason";
-     // Log error and display "T-Pot Honeypot Stats" title in red, so we know connection is interrupted
+     // Log error and display "Styre Honeypot Stats" title in red, so we know connection is interrupted
      console.log(reason+'. Attempting to reconnect ...');
      var honeypotStatsHeader = document.getElementById("honeypotStatsHeader");
      honeypotStatsHeader.style.color = "red";
-     honeypotStatsHeader.textContent = "T-Pot Honeypot Stats"
+     honeypotStatsHeader.textContent = "Styre Honeypot Stats"
      setTimeout(connectWebSocket, 5000); // Wait 5 seconds and attempt to reconnect
   };
 
